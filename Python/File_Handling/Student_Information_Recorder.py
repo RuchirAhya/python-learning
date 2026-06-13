@@ -1,0 +1,7 @@
+name = str(input("Enter name :"))
+mark = str(input("Enter mark :"))
+file = open("student.txt","w")
+file.write = ("Name:" +name+ "/n")
+file.write = ("Marks:" + mark)
+file.close()
+print("Work Done")
