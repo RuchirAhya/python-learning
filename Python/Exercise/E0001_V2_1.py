@@ -56,41 +56,39 @@ class product:
      self.price = price
 
     def display(products):
-         for x in products:
+         
           print("Product")
-          print("Product Name :",x.name)
-          print("Product Code :",x.code)
-          print("Product Category :",x.category)
-          print("Product Price :",x.price)
+          print("Product Name :",products.name)
+          print("Product Code :",products.code)
+          print("Product Category :",products.category)
+          print("Product Price :",products.price)
           print("-"*20)
-         print("*"*30)
-       
+          print("*"*30)
+    
+    def Search(products):
+     code_name = input("Enter Name here : ")
+
+     if code_name in products.name:
+        print("Product Found")
+        print("Product Name :", code_name)
+        print("*" * 15)
+     else:
+        print("Product Not Found")
+        print("*" * 15)
  
 c1 = [
-   category("tata","C1",100,"car","tata car","petrol"),
+ category("tata","C1",100,"car","tata car","petrol"),
  category("hyundai","C2",200,"car","hundai car","petrol"),
  category("toyota","C3",500,"car","toyota car","petrol"),
  category("volkswagen","C4",150,"car","volkswagen car","petrol"),
  category("BMW","C5",300,"car","BMW car","petrol")
 ]
 
-products =[
-   product("nexon","C1.1","tata",7500),
-   product("harrier","C1.2","tata",8800),
-   product("altroz","C1.3","tata",17800),
-   product("tucson","C2.1","hyundai",22625),
-   product("elantra","C2.2","hyundai",29750),
-   product("Ioniq5","C2.3","hyundai",35000),
-   product("Corolla","C3.1","toyota",24975),
-   product("RAV4","C3.2","toyota",41500),
-   product("Land Cruiser","C3.3","toyota",63000),
-   product("Golf","C4.1","volkswagen",30805),
-   product("Tiguan ","C4.2","volkswagen",34590),
-   product("ID.4","C4.4","volkswagen",39735),
-   product("3 Series","C5.1","BMW",45500),
-   product("X5","C5.2","BMW",65700),
-   product("i4","C5.3","BMW",57900)
-]
+print("Insert Value")
+products = product([(input("Enter Name :")) for x in range(0,5)],[input("Entar Code :") for x in range(0,5)],[input("Entar Category :") for x in range(0,5)],[input("Entar Price :") for x in range(0,5)])
 
 category.display_name(c1)
 product.display(products)
+
+print("Search Value")
+product.Search(products)
